@@ -1,0 +1,2 @@
+SourceIP,SourceAgentGUID,AgentStatus,OSType,OSBuild,TargetIP,TargetOS,TargetRetentionPath,HyperVIP,TargetVHDPath,TargetVMPath,ProtectionStatus,ProtectAction,FailoverStatus,FailoverAction,VMname,Message
+192.168.1.101,,,Linux,RHEL6-64,192.168.1.100,,,192.168.1.1,E:\VM\VHD\,,,,,,,

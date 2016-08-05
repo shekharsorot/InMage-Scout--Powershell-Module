@@ -1,0 +1,74 @@
+<Settings>
+	<ToolSettings>
+		<ModulePath>E:\MS Projects\ASR-V2\Module\InMage-Module.PS1</ModulePath>
+		<ProtectionFile>C:\ASR\V2H\machinelist.txt</ProtectionFile> <!-- Not needed any more -->
+		<FailoverFile></FailoverFile> <!-- Not needed any more -->
+		<Deploymentfile></Deploymentfile> <!-- Not needed any more -->
+		<!-- <TemplatePath>E:\MS Projects\ASR-CS-V2H\ASR-V2\Templates</TemplatePath> -->
+		<LogPath>C:\Users\Administratrator\Desktop</LogPath> 
+	</ToolSettings>
+
+<HyperV>
+    <Host>
+		<IPAddress>172.31.0.1</IPAddress>
+		<IsCluster>False</IsCluster>
+		<Username></Username>
+		<Password></Password>
+		<StoragePath>E:\VM\VHD_Storehouse</StoragePath>
+		<vSwitch Name = "ASR">
+			<AddressSpace>192.168.1.0/24</AddressSpace>		
+		</vSwitch>
+	</Host>	
+	<Host>
+		<IPAddress>192.168.1.1</IPAddress>
+		<IsCluster>False</IsCluster>
+		<Username>Contoso\HVAdmin</Username>
+		<Password>MicrosoftLovesLinux@2016</Password>
+		<StoragePath>E:\VM\VHD\</StoragePath>
+		<vSwitch Name = "ASR">
+			<AddressSpace VLAN = "">192.168.1.0/24</AddressSpace>		
+		</vSwitch>
+	</Host>		
+</HyperV>
+	
+	
+<Scout>
+    <CXIPAddress>192.168.1.66</CXIPAddress>
+    <PSIPAddress>192.168.1.66</PSIPAddress>
+    <MasterTarget>
+        <HostName>ASRS-MT2</HostName>
+        <IPAddress>192.168.1.99</IPAddress>
+        <Username>contoso10\cadmin</Username>
+        <Password>Password3</Password>
+        <RetentionPath>C:\Retention</RetentionPath>
+		<OS>Windows</OS>	
+    </MasterTarget>
+	<MasterTarget>	
+        <HostName>ASRS-MT3</HostName>
+        <IPAddress>192.168.1.100</IPAddress>
+        <Username>root</Username>
+        <Password>P@ssw0rd~1</Password>
+        <RetentionPath>/mnt/retention</RetentionPath>
+		<OS>Linux</OS>
+    </MasterTarget>
+</Scout>
+<VMWare>
+    <IPAddress></IPAddress>
+    <Username></Username>
+    <Password></Password>
+</VMWare>
+<SourceCredential>
+    <OS Type = "Linux">
+		<Username>root</Username>
+		<Password>P@ssw0rd~1</Password>
+		<Domain></Domain>
+	</OS>
+	<OS Type = "Windows">
+		<Username>Administratrator</Username>
+		<Password>P@ssw0rd~1</Password>
+		<Domain></Domain>
+	</OS>
+</SourceCredential>
+<ThrottleLimit>10</ThrottleLimit>
+
+</Settings>
